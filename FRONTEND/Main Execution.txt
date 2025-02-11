@@ -1,0 +1,13 @@
+# Main Execution
+pdf_path = "01-Class.pdf"  # Replace with your PDF file path
+pdf_content = extract_text_from_pdf(pdf_path)
+
+if pdf_content:
+    while True:
+        user_query = input("Ask your question (or type 'exit' to quit): ")
+        if user_query.lower() == "exit":
+            break
+        response = query_pdf_content(pdf_content, user_query)
+        print("Response:", response)
+else:
+    print("Could not extract content from the PDF.")

@@ -1,0 +1,9 @@
+import PyPDF2
+from langchain_groq import ChatGroq
+
+# Initialize the ChatGroq instance
+llm = ChatGroq(
+    model="mixtral-8x7b-32768",
+    temperature=0.2,
+    groq_api_key="gsk_Z6RskdPAZjvEGtIZ4iYWGdyb3FYIu5oxeP0oOTvvcCpEVftWJDH"
+)

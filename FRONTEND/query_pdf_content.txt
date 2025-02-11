@@ -1,0 +1,13 @@
+# Function to query the content
+def query_pdf_content(pdf_content, query):
+    prompt = f"""
+    You are a PDF content assistant. The following text is extracted from a PDF document:
+    ---
+    {pdf_content}
+    ---
+    Answer the user's query based on the above content. If the answer is not found in the text, reply with 'No information exists.'
+    
+    Query: {query}
+    """
+    response = llm.invoke(prompt, max_tokens=150)
+    return response.content.strip()  # Accessing the content attribute and applying strip()
